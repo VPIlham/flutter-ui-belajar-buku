@@ -23,43 +23,52 @@ class ActiveCourse extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset('assets/images/progress.png',
-                            width: 60)),
-                    SizedBox(width: 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Pengenalan dasar',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: kFont),
+                Expanded(
+                  flex: 4,
+                  child: Row(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset('assets/images/progress.png',
+                              width: 60)),
+                      SizedBox(width: 15),
+                      Expanded(
+                        flex: 6,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Kasuari yang Sombong',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: kFont),
+                            ),
+                            Text(
+                              '13 Halaman',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: kFontLight),
+                            )
+                          ],
                         ),
-                        Text(
-                          '1 lessons left',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: kFontLight),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-                CircularPercentIndicator(
-                  radius: 60.0,
-                  lineWidth: 5.0,
-                  percent: 0.61,
-                  center: Text(
-                    '61%',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
-                  progressColor: kAccent,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: CircularPercentIndicator(
+                    radius: 60.0,
+                    lineWidth: 5.0,
+                    percent: 0.61,
+                    center: Text(
+                      '61%',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    progressColor: kAccent,
+                  ),
                 ),
               ],
             ),
